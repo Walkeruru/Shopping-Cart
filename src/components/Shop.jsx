@@ -1,93 +1,88 @@
-import { useEffect, useState } from "react"
-import { Loading } from "@nextui-org/react";
-import { Grid, Button, Card, Col, Row, Spacer, Text } from "@nextui-org/react";
+import { Text, Container, Card, Col ,Grid, Button} from "@nextui-org/react";
+import { Link } from "react-router-dom";
+import '../App.css'
 
 const Shop = () => {
-   const [products,setProducts] = useState([]);
-   const [isLoading,setIsLoading] = useState(false);
-
-   useEffect(() =>{
-    fetchData();
-   },[]);
 
    const list = [
     {
-      name: "iPhone 14",
-      image: "/images/Samsung-Galaxy-S23-Plus.avif",
+      title: "iPhone 14 Pro Max",
+      image: "/images/Iphone.avif",
       price: "1550.50",
       id:1,
-    }
-]
+    },
+    {
+      title: "Samsung Galaxy S23 Plus",
+      image: "/images/Samsung.avif",
+      price: "1200.50",
+      id:2,
+    },
+    {
+      title: "Pixel 7",
+      image: "/images/pixel.avif",
+      price: "999.99",
+      id:3,
+    },
+    {
+      title: "OnePlus 11R",
+      image: "/images/OnePlus-11R.jpg",
+      price: "400.00",
+      id:4,
+    },
+    {
+      title: "Nothing phone",
+      image: "/images/nothing.webp",
+      price: "600.00",
+      id:5,
+    },
+    {
+      title: "iPhone 11 Pro Max",
+      image: "/images/iPhone11.avif",
+      price: "699.00",
+      id:6,
+    },
+    {
+      title: "Oppo A-17",
+      image: "/images/oppo-a17.avif",
+      price: "400.00",
+      id:7,
+    },
+    
+];
 
-   const fetchData = () =>{
-    setIsLoading(true);
-    fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(data=> {
-                setIsLoading(false);
-                setProducts(data)
-            });
-   }
  return(
-    <>
-    {isLoading && <Loading css={{position:'fixed', top:'50%' , left:'50%'}}/>}
-     <Grid.Container gap={4} justify="flex-start">
-      {products.map((product)=> (
-        <Grid xs={2}>
-        <Card isPressable variant="bordered" css={{ w: "100%", h: "500px" }} href={`products/${product.id}`}>
-      <Card.Body css={{ p: 0 }}>
-        <Card.Image
-          src={product.image}
-          objectFit="fill"
-          width="100%"
-          height="100%"
-        />
-      </Card.Body>
-      <Card.Footer
-        isBlurred
-        css={{
-          position: "absolute",
-          p: "$8",
-          bgBlur: "#ffffffcc",
-          borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
-          bottom: 0,
-          zIndex: 1,
-        }}
-      >
-        <Row>
-          <Col>
-            <Row justify="space-between" align="top">
-              <Col>
-                <Text h3>{product.title}</Text>
-                <Text
-                  size={"$sm"}
-                >
-                  {'lorem ipsum'}
-                </Text>
-              </Col>
-              <Col css={{ width: "auto" }}>
-                <Text
-                  css={{
-                    color: "$accents7",
-                    fontWeight: "$semibold",
-                    fontSize: "$2xl",
-                    pl: "$12",
-                  }}
-                >
-                  ${product.price}
-                </Text>
-              </Col>
-            </Row>
-            <Spacer y={1} />
-            <Button css={{ w: "100%" }}>Add to cart</Button>
-          </Col>
-        </Row>
-      </Card.Footer>
-    </Card>
-      </Grid>
+    <div className="App">
+    <Container>
+      <Text h1 style={{textAlign:"center", marginBottom:'1em'}}>Products</Text>
+      <Grid.Container gap={1} justify="center">
+      {list.map((product)=> (
+        <Grid xs={12} sm={3} key={product.id}>
+          <Link to={`/shop/${product.id}`}>
+          <Card isPressable isHoverable>
+          <Card.Image
+            src={product.image}
+            objectFit="cover"
+            width="100%"
+            height={340}
+            alt="Card image background"
+          />
+          <Card.Footer css={{ zIndex: 1, top: 5 }}>
+            <Col>
+              <Text h4 color="white">
+              {product.title}
+              </Text>
+              <Text size={18} weight="bold" transform="uppercase" color="hsl(272, 51.0%, 54.0%)">
+              ${product.price}
+              </Text>
+            </Col>
+          </Card.Footer>
+        </Card>
+        </Link>
+        </Grid>
       ))}
-    </Grid.Container>
-    </>
+      </Grid.Container>
+    </Container>
+    </div>
  )
 }
 

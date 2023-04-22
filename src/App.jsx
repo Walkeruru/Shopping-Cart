@@ -1,5 +1,4 @@
 import './App.css'
-import StoreNavbar from './components/Navbar';
 
 function App() {
 
