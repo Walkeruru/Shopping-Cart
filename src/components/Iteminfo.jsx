@@ -1,10 +1,6 @@
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Container } from "@nextui-org/react";
-import { Button, Text } from "@nextui-org/react";
-import { Image } from '@nextui-org/react';
+import { Button, Text, Container, Image } from "@nextui-org/react";
 import '../App.css'
-import { stringify } from "postcss";
 
 const Iteminfo = (props) => {
     let params = useParams();
@@ -12,19 +8,19 @@ const Iteminfo = (props) => {
     const list = [
         {
             title: "iPhone 14 Pro Max",
-            image: "/images/iPhone14-pro-max.jpg",
+            image: "/images/iPhone14-pro-max.webp",
             price: "1550.50",
             id: 1,
         },
         {
             title: "Samsung Galaxy S23 Plus",
-            image: "/images/samsung-galaxy-s23-plus.jpg",
+            image: "/images/samsung-galaxy-s23-plus.webp",
             price: "1200.50",
             id: 2,
         },
         {
             title: "Pixel 7",
-            image: "/images/pixel.jfif",
+            image: "/images/pixel.webp",
             price: "999.99",
             id: 3,
         },
@@ -36,19 +32,19 @@ const Iteminfo = (props) => {
         },
         {
             title: "Nothing phone",
-            image: "/images/nothing.png",
+            image: "/images/nothing1.webp",
             price: "600.00",
             id: 5,
         },
         {
             title: "iPhone 11 Pro Max",
-            image: "/images/iPhone11.jpg",
+            image: "/images/iPhone11-1.webp",
             price: "699.00",
             id: 6,
         },
         {
             title: "Oppo A-17",
-            image: "/images/Oppo-A17.jpg",
+            image: "/images/Oppo-A17.webp",
             price: "400.00",
             id: 7,
         },

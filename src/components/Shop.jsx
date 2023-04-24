@@ -7,25 +7,25 @@ const Shop = () => {
    const list = [
     {
       title: "iPhone 14 Pro Max",
-      image: "/images/Iphone.avif",
+      image: "/images/Iphone.webp",
       price: "1550.50",
       id:1,
     },
     {
       title: "Samsung Galaxy S23 Plus",
-      image: "/images/Samsung.avif",
+      image: "/images/Samsung.webp",
       price: "1200.50",
       id:2,
     },
     {
       title: "Pixel 7",
-      image: "/images/pixel.avif",
+      image: "/images/pixel-2.webp",
       price: "999.99",
       id:3,
     },
     {
       title: "OnePlus 11R",
-      image: "/images/OnePlus-11R.jpg",
+      image: "/images/OnePlus-11R.webp",
       price: "400.00",
       id:4,
     },
@@ -37,13 +37,13 @@ const Shop = () => {
     },
     {
       title: "iPhone 11 Pro Max",
-      image: "/images/iPhone11.avif",
+      image: "/images/iPhone11-1.webp",
       price: "699.00",
       id:6,
     },
     {
       title: "Oppo A-17",
-      image: "/images/oppo-a17.avif",
+      image: "/images/Oppo-A17.avif",
       price: "400.00",
       id:7,
     },
