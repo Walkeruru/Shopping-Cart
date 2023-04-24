@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HashRouter, Route, Routes } from "react-router-dom"; // cambiamos BrowserRouter por HashRouter para utilizar ghpages
+import { HashRouter, Route, Routes } from "react-router-dom"; // cambia BrowserRouter por HashRouter para utilizar ghpages
 import App from '../App';
 import Shop from "./Shop";
 import StoreNavbar from "./Navbar";
