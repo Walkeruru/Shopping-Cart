@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HashRouter, Route, Routes } from "react-router-dom"; // cambia BrowserRouter por HashRouter para utilizar ghpages
+import {HashRouter, Route, Routes } from "react-router-dom"; // cambia BrowserRouter por HashRouter para utilizar ghpages
 import App from '../App';
 import Shop from "./Shop";
 import StoreNavbar from "./Navbar";
@@ -54,7 +54,7 @@ const RouterSwitch = () => {
 
     return (
         <>
-            <HashRouter>
+        <HashRouter basename="/">
                 <StoreNavbar cantidad={carrito} cartPopUp={<CartPopUp articulos={articulosEnCarrito} cantidadCarrito={carrito} handleDelete={handleDelete} handleBuy={handleBuy} />}></StoreNavbar>
                 <Routes>
                     <Route path="/" element={<App />}></Route>
@@ -64,7 +64,7 @@ const RouterSwitch = () => {
                     <Route path="/buy" element={ <Buy /> }></Route>
                     <Route path="/about" element={<About />}></Route>
                 </Routes>
-            </HashRouter>
+        </HashRouter>
         </>
     )
 }

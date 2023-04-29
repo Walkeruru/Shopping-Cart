@@ -1,6 +1,6 @@
 import { Text, Container, Card, Col ,Grid, Button} from "@nextui-org/react";
 import { Link } from "react-router-dom";
-import '../App.css'
+import '../styles/shop.css'
 
 const Shop = () => {
 
@@ -12,7 +12,7 @@ const Shop = () => {
       id:1,
     },
     {
-      title: "Samsung Galaxy S23 Plus",
+      title: "Samsung Galaxy S23",
       image: "/images/Samsung.webp",
       price: "1200.50",
       id:2,
@@ -51,9 +51,9 @@ const Shop = () => {
 ];
 
  return(
-    <div className="App">
+    <div className="productos">
     <Container>
-      <Text h1 style={{textAlign:"center", marginBottom:'1em'}}>Products</Text>
+      <Text h1 style={{textAlign:"center"}}>Products</Text>
       <Grid.Container gap={1} justify="center">
       {list.map((product)=> (
         <Grid xs={12} sm={3} key={product.id}>
